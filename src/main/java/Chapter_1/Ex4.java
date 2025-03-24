@@ -14,13 +14,13 @@ public class Ex4 {
         arrList.add(scanner.next());
         System.out.println("Введите второе число");
         arrList.add(scanner.next());
-        arrList.
+
 
 
 
     }
 
-    public void getOperation() {
+    /*public void getOperation() {
         switch (operantion) {
             case "*":
                 result = val1 * val2;
@@ -37,7 +37,7 @@ public class Ex4 {
             default:
                 System.out.println("Введите корректную операцию!");
         }
-    }
+    }*/
 
     class Numb {
         void setFirstNumb(String firstNumb) {
