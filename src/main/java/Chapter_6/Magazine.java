@@ -43,4 +43,6 @@ public class Magazine implements Printable{
         System.out.println("Magazine: " + title + ", Issue #" +  issueNumber);
     }
 
+
+
 }

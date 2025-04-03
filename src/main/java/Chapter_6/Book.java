@@ -7,7 +7,7 @@ public class Book implements Printable{
 
     public Book(String title, String author, int year) {
         if (!title.trim().isEmpty() && !author.trim().isEmpty()
-        && title != null && author != null && year > 0 && year < 100) {
+        && title != null && author != null && year > 0) {
             this.title = title;
             this.author = author;
             this.year = year;
@@ -51,7 +51,7 @@ public class Book implements Printable{
     }
 
     public void setYear(int year) {
-        if (year > 0 && year < 100) {
+        if (year > 0) {
             this.year = year;
         } else {
             throw new IllegalArgumentException("Введите корректные данные");
