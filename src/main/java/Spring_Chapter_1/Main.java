@@ -5,7 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(Animal.class);
-        context.getBean(Dog.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext("Spring_Chapter_1");
+        PetOwner pet = context.getBean(Cat.class);
+
     }
 }
