@@ -11,4 +11,8 @@ public class PetOwner {
     public PetOwner(Animal animal) {
         this.animal = animal;
     }
+
+    public void petSound() {
+        animal.makeSound();
+    }
 }

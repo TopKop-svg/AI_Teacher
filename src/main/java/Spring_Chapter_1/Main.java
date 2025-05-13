@@ -5,8 +5,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext("Spring_Chapter_1");
-        PetOwner pet = context.getBean(Cat.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
+        //PetOwner pet = context.getBean(PetOwner.class);
+        Animal dog = context.getBean(Dog.class);
+        //pet.petSound();
+        dog.makeSound();
+        Animal animal = context.getBean(Cat.class);
+        animal.makeSound();
 
     }
 }
