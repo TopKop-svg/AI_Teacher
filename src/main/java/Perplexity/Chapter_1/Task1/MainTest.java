@@ -1,6 +1,7 @@
 package Perplexity.Chapter_1.Task1;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class MainTest {
@@ -53,8 +54,27 @@ public class MainTest {
         map.put(new Book("Recovery", "Doile"), 489);
         map.put(new Book("Manule", "Axiom"), 14);
 
-        for (int i = 0; i < map.size(); i++) {
-            map.get()
+
+        //Связка foreach / entrySet - для прохода мап
+        for (Map.Entry<Book, Integer> entry: map.entrySet()) {
+            Book key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(key.getTitle() + " by " + key.getAuthor() + " : " + value);
+        }
+
+        //Даёт возможность удалять элементы из коллекции при обходе
+        Iterator<Map.Entry<Book, Integer>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Book, Integer> entry = iterator.next();
+            Book key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(key.getTitle() + " by " + key.getAuthor() + " : " + value);
+        }
+
+        //Итерация по ключам с последующим получением значений
+        for (Book key: map.keySet()) {
+            Integer value = map.get(key);
+            System.out.println(key.getTitle() + " by " + key.getAuthor() + " : " + value);
         }
     }
 }
