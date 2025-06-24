@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * Практические задачи для закрепления знаний по Stream API.
  * <p>
  * Каждый метод — отдельная задача. В комментариях описана цель и пример использования.
- * Рекомендуется сначала прочесть {@link Chapter_9.package-info теоретический материал}, а затем решить задачи.
+ * Рекомендуется сначала прочесть {@link //Chapter_9. *package-info теоретический материал}, а затем решить задачи.
  */
 public class StreamTasks {
 
@@ -23,19 +23,16 @@ public class StreamTasks {
      * Пример: [1, 2, 3, 2] -> [1, 4, 9]
      */
     public static List<Integer> uniqueSquares(List<Integer> numbers) {
-        return numbers.stream()
-                .map(n -> n * n)
-                .distinct()
-                .collect(Collectors.toList());
+        // TODO: реализуйте метод
+        return Collections.emptyList();
     }
 
     /**
      * Подсчитать количество строк, начинающихся на заданную букву (без учёта регистра).
      */
     public static long countStartsWith(List<String> list, char c) {
-        return list.stream()
-                .filter(s -> !s.isEmpty() && Character.toLowerCase(s.charAt(0)) == Character.toLowerCase(c))
-                .count();
+        // TODO: реализуйте метод
+        return 0L;
     }
 
     /**
@@ -43,7 +40,8 @@ public class StreamTasks {
      * Пример: ["a", "b", "c"] -> "a, b, c"
      */
     public static String joinWithComma(List<String> strings) {
-        return String.join(", ", strings);
+        // TODO: реализуйте метод
+        return "";
     }
 
     /* ============================
@@ -55,9 +53,8 @@ public class StreamTasks {
      * Пример: [[1,2], [5,3]] -> [2,5]
      */
     public static List<Integer> maxInSubLists(List<List<Integer>> list) {
-        return list.stream()
-                .map(sub -> sub.stream().max(Integer::compareTo).orElseThrow())
-                .collect(Collectors.toList());
+        // TODO: реализуйте метод
+        return Collections.emptyList();
     }
 
     /**
@@ -65,22 +62,21 @@ public class StreamTasks {
      * Пример: ["Bob","Alice","Alex"] -> {A=[Alice, Alex], B=[Bob]}
      */
     public static Map<Character, List<String>> groupByFirstLetter(List<String> words) {
-        return words.stream()
-                .collect(Collectors.groupingBy(s -> Character.toUpperCase(s.charAt(0))));
+        // TODO: реализуйте метод
+        return new HashMap<>();
     }
 
     /**
      * Вернуть n первых простых чисел, начиная с 2.
      */
     public static List<Integer> firstNPrimes(int n) {
-        return Stream.iterate(2, i -> i + 1)
-                .filter(StreamTasks::isPrime)
-                .limit(n)
-                .collect(Collectors.toList());
+        // TODO: реализуйте метод
+        return Collections.emptyList();
     }
 
     private static boolean isPrime(int num) {
-        return num > 1 && IntStream.rangeClosed(2, (int) Math.sqrt(num)).allMatch(i -> num % i != 0);
+        // TODO: реализуйте метод (поможет firstNPrimes)
+        return false;
     }
 
     /* ============================
@@ -93,15 +89,8 @@ public class StreamTasks {
      * Пример: input="a b b c c c", k=2 -> ["c","b"]
      */
     public static List<String> topKFrequent(String text, int k) {
-        return Arrays.stream(text.toLowerCase().split("\\W+"))
-                .filter(s -> !s.isBlank())
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream()
-                .sorted(Map.Entry.<String, Long>comparingByValue(Comparator.reverseOrder())
-                        .thenComparing(Map.Entry.comparingByKey()))
-                .limit(k)
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
+        // TODO: реализуйте метод
+        return Collections.emptyList();
     }
 
     /**
@@ -109,9 +98,8 @@ public class StreamTasks {
      * Возвращает IntStream вида 0,1,1,2,3,5,8...
      */
     public static IntStream fibonacci() {
-        return IntStream.concat(IntStream.of(0, 1),
-                IntStream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
-                        .mapToInt(t -> t[1]));
+        // TODO: реализуйте метод
+        return IntStream.empty();
     }
 
     /**
@@ -119,17 +107,16 @@ public class StreamTasks {
      * Вернуть Optional.empty для пустого списка.
      */
     public static <T> Optional<T> sample(List<T> list) {
-        return list.stream()
-                .skip((int) (list.size() * Math.random()))
-                .findFirst();
+        // TODO: реализуйте метод
+        return Optional.empty();
     }
 
     /* ============================
      *  МЕТОДЫ ДЛЯ ТЕСТИРОВАНИЯ
      * ============================ */
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // Пример: вывод первых 10 чисел Фибоначчи
         fibonacci().limit(10).forEach(System.out::println);
-    }
+    }*/
 }
