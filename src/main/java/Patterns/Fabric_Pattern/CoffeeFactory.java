@@ -10,5 +10,6 @@ public class CoffeeFactory {
             default:
                 new IllegalArgumentException();
         }
+        return null;
     }
 }
