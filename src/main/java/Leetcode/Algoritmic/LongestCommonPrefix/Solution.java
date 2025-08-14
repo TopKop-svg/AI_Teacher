@@ -13,13 +13,18 @@ public class Solution {
                 minlenghtUnderString = strs[i].length();
             }
         }
+        int iterate = 0;
         //щас будем искать все подстроки в массиве
         for (int i = 0; i < strs.length; i++) {
             for (int j = 0; j < strs[i].length(); j++) {
-                subStrings.add(strs.)
+                subStrings.add(strs[i].substring(iterate, j+1));
+                if (j == strs[i].length()) {
+                    j = iterate + 1;
+                    iterate  += 1;
+                }
             }
         }
-
+        System.out.println(subStrings);
         String result = "";
         for (int i = 0; i < strs.length; i++) {
             for (int j = 0; j < strs[i].length(); j++) {
